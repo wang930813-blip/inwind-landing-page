@@ -1,10 +1,9 @@
 'use client';
-import { FAQList } from '@/lib/faqsList';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaQuestionCircle } from 'react-icons/fa';
 
 export default function Feature({ locale, langName = 'en' }) {
-	let list = FAQList[`FAQ_${langName.toUpperCase()}`] || [];
 	return (
 		<section
 			id='faq'
@@ -28,8 +27,6 @@ export default function Feature({ locale, langName = 'en' }) {
 					<h3 className='font-bold text-3xl md:text-5xl bg-gradient-to-r from-base-content from-50% to-[#9c9c9c] md:text-center bg-clip-text text-transparent !leading-[1.25em]'>
 						{locale.h3}
 					</h3>
-
-					<h4 className='w-full md:w-10/12 mx-auto text-xl md:text-2xl text-base-content/80 md:text-center'>{locale.description}</h4>
 				</div>
 			</motion.div>
 
@@ -40,23 +37,14 @@ export default function Feature({ locale, langName = 'en' }) {
 					duration: 0.5,
 				}}
 			>
-				<div className='relative z-10 w-full md:w-10/12 mx-auto flex flex-col gap-5'>
-					{list.map((item, index) => {
-						return (
-							<div
-								key={index}
-								tabIndex={0}
-								className='collapse collapse-arrow bg-base-200 border-b-[1px] border-base-content rounded-none bg-transparent'
-							>
-								<div className={`collapse-title text-xl font-medium ${langName === 'ar' ? 'text-right' : ''}`}>
-									{item.question}
-								</div>
-								<div className={`collapse-content ${langName === 'ar' ? 'text-right' : ''}`}>
-									<p>{item.answer}</p>
-								</div>
-							</div>
-						);
-					})}
+				<div className='relative z-10 w-full md:w-10/12 mx-auto flex justify-center'>
+					<Image
+						src='/contact.png'
+						width={1200}
+						height={800}
+						alt='联系我们'
+						className='w-full max-w-5xl h-auto rounded-xl'
+					/>
 				</div>
 			</motion.div>
 

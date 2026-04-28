@@ -1,8 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
-import { SiGithub } from 'react-icons/si';
 
-export default function Cta({ locale, CTALocale }) {
+export default function Cta({ locale }) {
 	return (
 		<section
 			id='feature'
@@ -21,14 +20,6 @@ export default function Cta({ locale, CTALocale }) {
 					</h2>
 
 					<h3 className='w-full md:w-10/12 mx-auto text-xl md:text-2xl text-base-content/80 md:text-center'>{locale.h3}</h3>
-
-					<a
-						title='get source code'
-						className='mt-10 btn btn-sm md:btn-md btn-base border-none hover:ring-1 ring-base-content text-base-100 hover:text-base-content bg-base-content hover:bg-base-100 rounded-full'
-						href='#'
-					>
-						<SiGithub /> {CTALocale.btn1}
-					</a>
 				</div>
 			</motion.div>
 
